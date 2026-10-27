@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Advanced calculator with scientific functions and memory" />
+    <title>Advanced Calculator</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="top-bar">
+        <div>
+          <p class="app-label">Calculator</p>
+          <h1>Advanced</h1>
+        </div>
+        <button class="icon-button" id="theme-toggle" aria-label="Toggle theme">
+          <span class="theme-icon">☀</span>
+        </button>
+      </header>
+
+      <main class="calculator" aria-label="Advanced calculator">
+        <section class="display-panel" aria-live="polite">
+          <div class="expression-row" id="expression">0</div>
+          <div class="result-row" id="result">0</div>
+        </section>
+
+        <section class="memory-bar" aria-label="Memory controls">
+          <button class="memory-button" data-memory-action="clear">MC</button>
+          <button class="memory-button" data-memory-action="read">MR</button>
+          <button class="memory-button" data-memory-action="add">M+</button>
+          <button class="memory-button" data-memory-action="subtract">M−</button>
+          <button class="memory-button" data-memory-action="save">MS</button>
+        </section>
+
+        <section class="mode-bar" aria-label="Calculator modes">
+          <button class="mode-button active" data-mode="basic">Basic</button>
+          <button class="mode-button" data-mode="scientific">Scientific</button>
+        </section>
+
+        <section class="keypad" aria-label="Calculator keypad">
+          <button class="key function" data-operator="clear-all">AC</button>
+          <button class="key function" data-operator="delete">DEL</button>
+          <button class="key function" data-value="pi">π</button>
+          <button class="key function" data-operator="parenthesis">( )</button>
+
+          <button class="key scientific hidden" data-value="sin(">sin</button>
+          <button class="key scientific hidden" data-value="cos(">cos</button>
+          <button class="key scientific hidden" data-value="tan(">tan</button>
+          <button class="key operator" data-value="/">÷</button>
+
+          <button class="key scientific hidden" data-value="sqrt(">√</button>
+          <button class="key scientific hidden" data-value="log(">log</button>
+          <button class="key scientific hidden" data-value="ln(">ln</button>
+          <button class="key operator" data-value="*">×</button>
+
+          <button class="key scientific hidden" data-value="pow(">xʸ</button>
+          <button class="key scientific hidden" data-value="asin(">asin</button>
+          <button class="key scientific hidden" data-value="acos(">acos</button>
+          <button class="key operator" data-value="-">−</button>
+
+          <button class="key scientific hidden" data-value="^">xʸ</button>
+          <button class="key number" data-value="7">7</button>
+          <button class="key number" data-value="8">8</button>
+          <button class="key operator" data-value="+">+</button>
+
+          <button class="key scientific hidden" data-value="abs(">|x|</button>
+          <button class="key number" data-value="4">4</button>
+          <button class="key number" data-value="5">5</button>
+          <button class="key number" data-value="6">6</button>
+
+          <button class="key number" data-value="1">1</button>
+          <button class="key number" data-value="2">2</button>
+          <button class="key number" data-value="3">3</button>
+          <button class="key operator equals" data-operator="equals">=</button>
+
+          <button class="key number wide" data-value="0">0</button>
+          <button class="key number" data-value=".">.</button>
+          <button class="key function" data-operator="negate">±</button>
+        </section>
+
+        <section class="history-panel" aria-label="Calculation history">
+          <div class="history-header">
+            <h2>History</h2>
+            <button class="clear-history" id="clear-history">Clear</button>
+          </div>
+          <ul id="history-list" class="history-list"></ul>
+        </section>
+      </main>
+    </div>
+
+    <script type="module" src="script.js"></script>
+  </body>
+</html>
